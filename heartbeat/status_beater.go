@@ -31,6 +31,9 @@ const (
 	ServiceStopped = 3
 )
 
+// fqBeatName is the fully qualified beat name
+var fqBeatName string
+
 // Status is used for status of heartbeat1
 type Status struct {
 	Code        int64  `json:"code"`
@@ -100,6 +103,7 @@ func (sb *StatusBeater) PublishEvent(logData []byte, publish func(event beat.Eve
 	}
 	publish(event)
 	logp.Info("heartbeat sent")
+	logp.Debug("Fully Qualified Beatname: %s", fqBeatName)
 }
 
 // NewStatusBeater will return a new StatusBeater with the provided base information
