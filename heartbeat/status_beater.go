@@ -2,6 +2,7 @@ package heartbeat
 
 import (
 	"encoding/json"
+	"os"
 	"time"
 
 	"github.com/elastic/beats/libbeat/beat"
@@ -29,6 +30,9 @@ const (
 	ServiceRunning = 2
 	//ServiceStopped is a code for stopping a particular service
 	ServiceStopped = 3
+
+	// FQBeatName variable name for fully qualified beat name
+	FQBeatName = "FullyQualifiedBeatName"
 )
 
 // fqBeatName is the fully qualified beat name
@@ -55,6 +59,7 @@ type StatusBeater struct {
 // Start will begin reporting heartbeats through the beats
 func (sb *StatusBeater) Start(stopChan chan struct{}, publish func(event beat.Event)) {
 	go func() {
+		fqBeatName = os.Getenv(FQBeatName)
 		sb.Beat(ServiceStarted, "Service started", publish)
 		for {
 			select {

@@ -1,0 +1,7 @@
+{
+    "MainRoot": "logrhythm/sophoscentralbeat",
+    "MainPkgName": "main",
+    "FirstParty": [
+        "github.com/logrhythm"
+    ]
+}
