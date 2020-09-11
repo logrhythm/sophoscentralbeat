@@ -13,6 +13,7 @@ import (
 	"github.com/elastic/beats/libbeat/common"
 	"github.com/elastic/beats/libbeat/logp"
 	"github.com/logrhythm/sophoscentralbeat/config"
+	"github.com/logrhythm/sophoscentralbeat/environment"
 	"github.com/logrhythm/sophoscentralbeat/handlers"
 	"github.com/logrhythm/sophoscentralbeat/heartbeat"
 	"github.com/logrhythm/sophoscentralbeat/sophoscentral"
@@ -56,8 +57,6 @@ var (
 const (
 	// ServiceName is the name of the service
 	ServiceName = "sophoscentralbeat"
-	// FQBeatNamevariable name for fully qualified beat name
-	FQBeatName = "FullyQualifiedBeatName"
 )
 
 // New creates an instance of sophoscentralbeat.
@@ -86,7 +85,7 @@ func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 		logp.Err("Unable to get position Handler %v", err)
 		return nil, err
 	}
-	fqBeatName = os.Getenv(FQBeatName)
+	fqBeatName = os.Getenv(environment.FQBeatName)
 	currentPos := new(scbPosition)
 	poserr := pos.ReadPositionfromFile(currentPos)
 	yesterdayTime := GenerateYesterdayTimeStamp()
