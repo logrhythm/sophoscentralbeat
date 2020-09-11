@@ -103,6 +103,9 @@ func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 		currentPos.AlertsTimestamp = yesterdayTime
 	}
 	logp.Info("Config fields: %+v", c)
+
+	logp.Debug("Fully Qualified Beatname: %s", fqBeatName)
+
 	bt := &Sophoscentralbeat{
 		done:            make(chan struct{}),
 		sophos:          sophos,
