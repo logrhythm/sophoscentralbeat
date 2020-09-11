@@ -1,0 +1,8 @@
+# The CODEOWNERS file defines who owns different code in the repository. Folks
+# listed as owners will be notified when PRs are created.  See the following
+# for more details:
+# https://blog.github.com/2017-07-06-introducing-code-owners/
+# https://help.github.com/articles/about-codeowners/
+
+################# DEFAULT #################
+* @logrhythm/beatsfactory @logrhythm/beats-automation
