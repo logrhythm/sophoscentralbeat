@@ -105,9 +105,6 @@ func (sb *StatusBeater) PublishEvent(logData []byte, publish func(event beat.Eve
 	}
 	publish(event)
 	logp.Info("heartbeat sent")
-
-	// Same log fqBeatName as SIEM ./internal/pkg/heartbeat/status_beater.go func StatusBeater
-	logp.Debug("Fully Qualified Beatname: %s", fqBeatName)
 }
 
 // NewStatusBeater will return a new StatusBeater with the provided base information
