@@ -57,7 +57,6 @@ type StatusBeater struct {
 // Start will begin reporting heartbeats through the beats
 func (sb *StatusBeater) Start(stopChan chan struct{}, publish func(event beat.Event)) {
 	go func() {
-		fqBeatName = os.Getenv(environment.FQBeatName)
 		sb.Beat(ServiceStarted, "Service started", publish)
 		for {
 			select {
@@ -124,6 +123,9 @@ func NewStatusBeater(serviceName string, interval time.Duration, doneChan chan s
 
 // NewStatusBeaterWithFunc returns a new StatusBeater that uses the provided func as a trigger for sending beats
 func NewStatusBeaterWithFunc(serviceName string, intervalFunc IntervalFunc, doneChan chan struct{}) *StatusBeater {
+
+	fqBeatName = os.Getenv(environment.FQBeatName)
+
 	return &StatusBeater{
 		Name:         serviceName,
 		IntervalFunc: intervalFunc,
