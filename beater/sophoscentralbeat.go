@@ -103,9 +103,7 @@ func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 		currentPos.AlertsTimestamp = yesterdayTime
 	}
 	logp.Info("Config fields: %+v", c)
-
-	// only on Start beat log fqBeatName value, instead of every PublishEvent action
-	logp.Debug("Fully Qualified Beatname: %s", fqBeatName)
+	logp.Info("Fully Qualified Beatname: %s", fqBeatName)
 
 	bt := &Sophoscentralbeat{
 		done:            make(chan struct{}),
