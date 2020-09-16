@@ -2,12 +2,14 @@ package heartbeat
 
 import (
 	"encoding/json"
+	"os"
 	"time"
 
 	"github.com/elastic/beats/libbeat/beat"
 	"github.com/elastic/beats/libbeat/common"
 	"github.com/elastic/beats/libbeat/logp"
 	"github.com/golang/protobuf/ptypes/timestamp"
+	"github.com/logrhythm/sophoscentralbeat/environment"
 )
 
 // Heartbeat is a structure for heartbeat
@@ -30,6 +32,9 @@ const (
 	//ServiceStopped is a code for stopping a particular service
 	ServiceStopped = 3
 )
+
+// fqBeatName is the fully qualified beat name
+var fqBeatName string
 
 // Status is used for status of heartbeat1
 type Status struct {
@@ -115,6 +120,9 @@ func NewStatusBeater(serviceName string, interval time.Duration, doneChan chan s
 
 // NewStatusBeaterWithFunc returns a new StatusBeater that uses the provided func as a trigger for sending beats
 func NewStatusBeaterWithFunc(serviceName string, intervalFunc IntervalFunc, doneChan chan struct{}) *StatusBeater {
+
+	fqBeatName = os.Getenv(environment.FQBeatName)
+
 	return &StatusBeater{
 		Name:         serviceName,
 		IntervalFunc: intervalFunc,
