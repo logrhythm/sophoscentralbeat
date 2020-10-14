@@ -1,0 +1,263 @@
+{
+	"Golang errors": {},
+	"Issues": [
+		{
+			"severity": "HIGH",
+			"confidence": "LOW",
+			"cwe": {
+				"ID": "798",
+				"URL": "https://cwe.mitre.org/data/definitions/798.html"
+			},
+			"rule_id": "G101",
+			"details": "Potential hardcoded credentials",
+			"file": "/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "tokenCacheDir := \"/beats/sophoscentralbeat\"",
+			"line": "80",
+			"column": "2"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "22",
+				"URL": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "ioutil.ReadFile(file)",
+			"line": "43",
+			"column": "15"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "22",
+				"URL": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "os.Open(path)",
+			"line": "345",
+			"column": "15"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "scb.posHandler.WritePostiontoFile(scb.currentPosition)",
+			"line": "177",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "scb.posHandler.WritePostiontoFile(scb.currentPosition)",
+			"line": "335",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "ioutil.WriteFile(file, jtkn, 0644)",
+			"line": "72",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "scb.client.Close()",
+			"line": "332",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_alert_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "122",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_event_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "127",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "115",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "226",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "337",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "448",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "localVarHttpResponse.Body.Close()",
+			"line": "559",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "w.WriteField(k, iv)",
+			"line": "209",
+			"column": "6"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "w.Close()",
+			"line": "231",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "scb.posHandler.WritePostiontoFile(scb.currentPosition)",
+			"line": "262",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "xml.NewEncoder(bodyBuf).Encode(body)",
+			"line": "382",
+			"column": "3"
+		}
+	],
+	"Stats": {
+		"files": 39,
+		"lines": 2899,
+		"nosec": 0,
+		"found": 18
+	}
+}
