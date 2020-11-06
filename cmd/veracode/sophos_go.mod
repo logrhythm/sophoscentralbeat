@@ -79,6 +79,9 @@ require (
 	github.com/census-instrumentation/opencensus-proto 7f2434bc10da710debe5c4315ed6d4df454b4024 // WS 7f2434bc10da710debe5c4315ed6d4df454b4024
 	golang.org/x/sync 37e7f081c4d4c64e13b10787722085407fe5d15f // WS 37e7f081c4d4c64e13b10787722085407fe5d15f
 	golang.org/x/crypto a4c6cb3142f211c99e4bf4cd769535b29a9b616f // WS a4c6cb3142f211c99e4bf4cd769535b29a9b616f
+	github.com/duosecurity/duo_api_golang a7aeb2c50f60d08838651282da51492592d1d79d // WS a7aeb2c50f60d08838651282da51492592d1d79d
+	github.com/levenlabs/golib 0f897479478320c46bcfed70c4fbd6564c42890a // WS 0f897479478320c46bcfed70c4fbd6564c42890a
+	gopkg.in/mgo.v2 a6b53ec6cb22a3699387a57a161566f9402ee85b // WS a6b53ec6cb22a3699387a57a161566f9402ee85b
 	github.com/manifoldco/promptui d52ab0c3bdfe101f5d5a959862982c2f13fad6fb // WS d52ab0c3bdfe101f5d5a959862982c2f13fad6fb
 	github.com/chzyer/readline 2972be24d48e78746da79ba8e24e8b488c9880de // WS 2972be24d48e78746da79ba8e24e8b488c9880de
 	github.com/juju/ansiterm 720a0952cc2ac777afc295d9861263e2a4cf96a1 // WS 720a0952cc2ac777afc295d9861263e2a4cf96a1
