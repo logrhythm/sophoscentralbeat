@@ -28,6 +28,6 @@
 *                         - keep in sync with repo: siem, branch: us7476_veracode, directory: cmd/veracode/scripts
 * __init__.py             - python module
 * gosec_ruleid_count.sh   - bash script: counts each rule_id in gosec output json file
-* gosec_rule_stdio.py     - python script: converts input (gosec report) to output (severity, rule, found-file order)
 * gosec_severity_count.sh - bash script: counts each severity in gosec output json file
 * gosec_rule_order.py     - python script: converts gosec output json into severity, rule, found-file order
+* workspace_gomod.py      - bash script: generated go mod file via WORKSPACE file's go_repository items
