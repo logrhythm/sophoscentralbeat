@@ -50,14 +50,49 @@ function error_eval () {
 }
 
 function build_app () {
-    #which go
+
     build=$1
-    go mod vendor
-    error_eval $? "$build failed 'go mod vendor'"
+
+    GOROOT="/usr/local/Cellar/go@1.12/1.12.17/libexec"
+    GOPRIVATE="github.com/logrhythm/siem"
+    PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+    PATH="/usr/local/opt/go@1.12/bin:$PATH"
+
+    # Note GO 1.12 most beats have 'go build' error with github.com/pkg/errors v0.9.1
+    #   Most other components do not have this error
+    #   The siem repo's WORKSPACE file has v0.8.0, but 'go mod vendor' load v0.9.1
+    #   via github.com/pkg/errors site: v0.9 removed pre Go 1.9 and Go 1.10 support
+
+    # Note GO 1.13 and 1.14 mod vendor, load import mock packages
+    #   Need to mockgen these packages using their bazel.build file
+    #   The currect prep mock shell script generates 16 of 18 import mocks
+    #   Which causes 'mod vendor' failure
+
+    # GOROOT="/usr/local/Cellar/go@1.13/1.13.15/libexec"
+    # GOPRIVATE="github.com/logrhythm/siem"
+    # PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+    # PATH="/usr/local/opt/go@1.13/bin:$PATH"
+
+    # GOROOT="/usr/local/Cellar/go@1.14/1.14.13/libexec"
+    # GOPRIVATE="github.com/logrhythm/siem"
+    # PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+    # PATH="/usr/local/opt/go@1.14/bin:$PATH"
+
+    echo "go path: `which go`"
+    echo "run: `which go` mod vendor"
+    go mod vendor -v
+    error_eval $? "$build failed: `which go` mod vendor"
+    echo "done `which go` mod vendor"
+    echo ""
+
+    echo "run: `which go` build -mod=vendor"
     go build -mod=vendor .
-    error_eval $? "$build failed 'go build -mod=vendor'"
+    # error_eval $? "$build failed: `which go` build -mod=vendor"
+    echo "done `which go` build -mod=vendor"
+    echo ""
+
     ls -l sophoscentralbeat
-    error_eval $? "$build no sophoscentralbeat file"
+    # error_eval $? "$build no sophoscentralbeat file"
     #cat main.go
     sleep 4
 }

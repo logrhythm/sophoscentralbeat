@@ -1,0 +1,153 @@
+{
+    "HIGH": {
+        "G101": {
+            "confidence": "LOW",
+            "cwe": {
+                "ID": "798",
+                "URL": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "details": "Potential hardcoded credentials",
+            "filelist": {
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "code": "tokenCacheDir := \"/beats/sophoscentralbeat\"",
+                        "column": "2",
+                        "line": "80"
+                    }
+                ]
+            }
+        }
+    },
+    "MEDIUM": {
+        "G304": {
+            "confidence": "HIGH",
+            "cwe": {
+                "ID": "22",
+                "URL": "https://cwe.mitre.org/data/definitions/22.html"
+            },
+            "details": "Potential file inclusion via variable",
+            "filelist": {
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "code": "ioutil.ReadFile(file)",
+                        "column": "15",
+                        "line": "43"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/lrutilities/crypto/encryption.go": [
+                    {
+                        "code": "ioutil.ReadFile(path)",
+                        "column": "15",
+                        "line": "85"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go": [
+                    {
+                        "code": "os.Open(path)",
+                        "column": "15",
+                        "line": "345"
+                    }
+                ]
+            }
+        }
+    },
+    "LOW": {
+        "G104": {
+            "confidence": "HIGH",
+            "cwe": {
+                "ID": "703",
+                "URL": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "details": "Errors unhandled.",
+            "filelist": {
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go": [
+                    {
+                        "code": "scb.posHandler.WritePostiontoFile(scb.currentPosition)",
+                        "column": "2",
+                        "line": "183"
+                    },
+                    {
+                        "code": "scb.posHandler.WritePostiontoFile(scb.currentPosition)",
+                        "column": "2",
+                        "line": "266"
+                    },
+                    {
+                        "code": "scb.client.Close()",
+                        "column": "2",
+                        "line": "336"
+                    },
+                    {
+                        "code": "scb.posHandler.WritePostiontoFile(scb.currentPosition)",
+                        "column": "2",
+                        "line": "339"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "code": "ioutil.WriteFile(file, jtkn, 0644)",
+                        "column": "2",
+                        "line": "72"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_alert_controller_v1_impl.go": [
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "122"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_event_controller_v1_impl.go": [
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "127"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go": [
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "448"
+                    },
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "559"
+                    },
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "337"
+                    },
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "226"
+                    },
+                    {
+                        "code": "localVarHttpResponse.Body.Close()",
+                        "column": "2",
+                        "line": "115"
+                    }
+                ],
+                "/Users/arnold.miller/veracode/sophos/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go": [
+                    {
+                        "code": "w.WriteField(k, iv)",
+                        "column": "6",
+                        "line": "209"
+                    },
+                    {
+                        "code": "w.Close()",
+                        "column": "3",
+                        "line": "231"
+                    },
+                    {
+                        "code": "xml.NewEncoder(bodyBuf).Encode(body)",
+                        "column": "3",
+                        "line": "382"
+                    }
+                ]
+            }
+        }
+    }
+}
