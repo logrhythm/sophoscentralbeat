@@ -1,6 +1,6 @@
 module sophoscentralbeat
 
-go 1.13
+go 1.14
 
 // Automatic generated via repo: 'siem', file: 'WORKSPACE', override: 'sophos_override.json'
 
@@ -83,7 +83,8 @@ require (
 	github.com/levenlabs/golib 0f897479478320c46bcfed70c4fbd6564c42890a // WS 0f897479478320c46bcfed70c4fbd6564c42890a
 	gopkg.in/mgo.v2 a6b53ec6cb22a3699387a57a161566f9402ee85b // WS a6b53ec6cb22a3699387a57a161566f9402ee85b
 	github.com/peterhellberg/link 7d8125c3085c14bd320d898c73b78ef2c5320f31 // WS 7d8125c3085c14bd320d898c73b78ef2c5320f31
-	github.com/manifoldco/promptui v0.8.0 // WS d52ab0c3bdfe101f5d5a959862982c2f13fad6fb
+	github.com/manifoldco/promptui v0.8.0 // WS d52ab0c3bdfe101f5d5a959862982c2f13fad6fb not found
+	// github.com/manifoldco/promptui d52ab0c3bdfe101f5d5a959862982c2f13fad6fb not found
 	github.com/chzyer/readline 2972be24d48e78746da79ba8e24e8b488c9880de // WS 2972be24d48e78746da79ba8e24e8b488c9880de
 	github.com/juju/ansiterm 720a0952cc2ac777afc295d9861263e2a4cf96a1 // WS 720a0952cc2ac777afc295d9861263e2a4cf96a1
 	github.com/mattn/go-colorable 3a70a971f94a22f2fa562ffcc7a0eb45f5daf045 // WS 3a70a971f94a22f2fa562ffcc7a0eb45f5daf045
