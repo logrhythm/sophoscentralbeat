@@ -1,6 +1,6 @@
 module sophoscentralbeat
 
-go 1.14
+go 1.12
 
 // Automatic generated via repo: 'siem', file: 'WORKSPACE', override: 'sophos_override.json'
 
@@ -13,6 +13,9 @@ require (
 	github.com/logrhythm/sophoscentralbeat latest // WS use above replace path
 	github.com/Sirupsen/logrus 1.0.2 // required not in WS
 	github.com/golang/protobuf v1.3.0  // required not in WS
+	github.com/containerd/containerd v1.3.9 // avoid beats go build error with github.com/pkg/errors v0.9.1
+	github.com/docker/docker v1.13.1 // avoid beats go build error with github.com/pkg/errors v0.9.1
+	// github.com/docker/docker v1.31.1 from Release 2020.12 go.mod and go.sum files
 
 	  // similar to siem cmd/veracode/veracode_ws_go.mod file
 	google.golang.org/grpc v1.22.0 // WS v1.22.0
