@@ -47,11 +47,12 @@ require (
 	google.golang.org/api 94a01c17d1a38947febf7da60d4258f4d3f354e8 // WS 94a01c17d1a38947febf7da60d4258f4d3f354e8
 	github.com/googleapis/gax-go ddfab93c3faef4935403ac75a7c11f0e731dc181 // WS ddfab93c3faef4935403ac75a7c11f0e731dc181
 	go.opencensus.io 2f39cd45ab48b7dc7e5b0d7393bae371e201b1c4 // WS 2f39cd45ab48b7dc7e5b0d7393bae371e201b1c4
-	golang.org/x/oauth2 5dab4167f31cbd76b407f1486c86b40748bc5073 // WS 5dab4167f31cbd76b407f1486c86b40748bc5073
-	github.com/aws/aws-sdk-go 951ad7ef064805f1c666d02dee8dfe9363e0f014 // WS 951ad7ef064805f1c666d02dee8dfe9363e0f014
+	golang.org/x/oauth2 08078c50e5b5244ec123a6b69facdbc13b21a548 // WS 08078c50e5b5244ec123a6b69facdbc13b21a548
+	github.com/aws/aws-sdk-go 8fac01d8d2d94b6b14a974a798a9bef7918ace72 // WS 8fac01d8d2d94b6b14a974a798a9bef7918ace72
+	github.com/jmespath/go-jmespath 3d4fd11601ddca248480565884e34e393313cd62 // WS 3d4fd11601ddca248480565884e34e393313cd62
 	github.com/dsnet/compress da652975a8eea9fa0735aba8056747a751db0bd3 // WS da652975a8eea9fa0735aba8056747a751db0bd3
-	github.com/klauspost/pgzip 083b1c3f84dd6486588802e5ce295de3a7f41a8b // WS 083b1c3f84dd6486588802e5ce295de3a7f41a8b
-	github.com/ulikunitz/xz 6f934d456d51e742b4eeab20d925a827ef22320a // WS 6f934d456d51e742b4eeab20d925a827ef22320a
+	github.com/klauspost/pgzip e899416eed9ce514ab67ef70675c342eba86f5b2 // WS e899416eed9ce514ab67ef70675c342eba86f5b2
+	github.com/ulikunitz/xz 97d4618bded97982c0a1daeae84e54286e32d09c // WS 97d4618bded97982c0a1daeae84e54286e32d09c
 	github.com/spf13/cobra 7547e83b2d85fd1893c7d76916f67689d761fecb // WS 7547e83b2d85fd1893c7d76916f67689d761fecb.tar.gz
 	github.com/spf13/pflag 24fa6976df40757dce6aea913e7b81ade90530e1 // WS 24fa6976df40757dce6aea913e7b81ade90530e1.tar.gz
 	github.com/spf13/viper 9e56dacc08fbbf8c9ee2dbc717553c758ce42bc9 // WS 9e56dacc08fbbf8c9ee2dbc717553c758ce42bc9
@@ -61,9 +62,9 @@ require (
 	github.com/spf13/jwalterweatherman 94f6ae3ed3bceceafa716478c5fbf8d29ca601a1 // WS 94f6ae3ed3bceceafa716478c5fbf8d29ca601a1
 	github.com/hashicorp/hcl 65a6292f0157eff210d03ed1bf6c59b190b8b906 // WS 65a6292f0157eff210d03ed1bf6c59b190b8b906
 	github.com/magiconair/properties 7757cc9fdb852f7579b24170bcacda2c7471bb6a // WS 7757cc9fdb852f7579b24170bcacda2c7471bb6a
-	github.com/tidwall/gjson fb8e539484c9fb2df9f472bc0e3949a74c256f95 // WS fb8e539484c9fb2df9f472bc0e3949a74c256f95
-	github.com/tidwall/pretty 1166b9ac2b65e46a43d8618d30d1554f4652d49b // WS 1166b9ac2b65e46a43d8618d30d1554f4652d49b
-	github.com/tidwall/match 33827db735fff6510490d69a8622612558a557ed // WS 33827db735fff6510490d69a8622612558a557ed
+	github.com/tidwall/gjson 97ec619cbe9546828dc45cb856a5938dcf3d74e1 // WS 97ec619cbe9546828dc45cb856a5938dcf3d74e1
+	github.com/tidwall/pretty 6125e211625ae96faecf7d76f623c40862dc01d8 // WS 6125e211625ae96faecf7d76f623c40862dc01d8
+	github.com/tidwall/match 9e52e9e068387201730ec4876bac3a1902d0eef8 // WS 9e52e9e068387201730ec4876bac3a1902d0eef8
 	github.com/elastic/beats v7.0.0 // WS 2c385a0764bdc537b6dc078a1d9bf11bb6d7bd95 is v6.6.0
 	// github.com/elastic/beats v7.3.0 to v7.0.0 Solution 6.6.0 issue: cannot use adapter.GetGoMetric
 	github.com/Azure/azure-event-hubs-go/v3 v3.1.1 // WS v3.1.1
@@ -82,7 +83,7 @@ require (
 	github.com/census-instrumentation/opencensus-proto 7f2434bc10da710debe5c4315ed6d4df454b4024 // WS 7f2434bc10da710debe5c4315ed6d4df454b4024
 	golang.org/x/sync 37e7f081c4d4c64e13b10787722085407fe5d15f // WS 37e7f081c4d4c64e13b10787722085407fe5d15f
 	golang.org/x/crypto a4c6cb3142f211c99e4bf4cd769535b29a9b616f // WS a4c6cb3142f211c99e4bf4cd769535b29a9b616f
-	github.com/duosecurity/duo_api_golang a7aeb2c50f60d08838651282da51492592d1d79d // WS a7aeb2c50f60d08838651282da51492592d1d79d
+	github.com/duosecurity/duo_api_golang 0e07e9f869e36b7128308dccfce1b038db0e1712 // WS 0e07e9f869e36b7128308dccfce1b038db0e1712
 	github.com/levenlabs/golib 0f897479478320c46bcfed70c4fbd6564c42890a // WS 0f897479478320c46bcfed70c4fbd6564c42890a
 	gopkg.in/mgo.v2 a6b53ec6cb22a3699387a57a161566f9402ee85b // WS a6b53ec6cb22a3699387a57a161566f9402ee85b
 	github.com/peterhellberg/link 7d8125c3085c14bd320d898c73b78ef2c5320f31 // WS 7d8125c3085c14bd320d898c73b78ef2c5320f31
