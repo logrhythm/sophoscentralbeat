@@ -1,0 +1,299 @@
+{
+	"Golang errors": {
+		"/root/veracode/src/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go": [
+			{
+				"line": 22,
+				"column": 7,
+				"error": "could not import github.com/logrhythm/sophoscentralbeat/lrutilities/crypto (invalid package name: \"\")"
+			}
+		]
+	},
+	"Issues": [
+		{
+			"severity": "HIGH",
+			"confidence": "LOW",
+			"cwe": {
+				"ID": "798",
+				"URL": "https://cwe.mitre.org/data/definitions/798.html"
+			},
+			"rule_id": "G101",
+			"details": "Potential hardcoded credentials",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "79: \n80: \ttokenCacheDir := \"/beats/sophoscentralbeat\"\n81: \n",
+			"line": "80",
+			"column": "2"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "22",
+				"URL": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "344: func addFile(w *multipart.Writer, fieldName, path string) error {\n345: \tfile, err := os.Open(path)\n346: \tif err != nil {\n",
+			"line": "345",
+			"column": "15"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "22",
+				"URL": "https://cwe.mitre.org/data/definitions/22.html"
+			},
+			"rule_id": "G304",
+			"details": "Potential file inclusion via variable",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "42: \n43: \tdata, err := ioutil.ReadFile(file)\n44: \n",
+			"line": "43",
+			"column": "15"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "276",
+				"URL": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "71: \n72: \tioutil.WriteFile(file, jtkn, 0644)\n73: \treturn true, err\n",
+			"line": "72",
+			"column": "2"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G307",
+			"details": "Deferring unsafe method \"Close\" on type \"*os.File\"",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "348: \t}\n349: \tdefer file.Close()\n350: \n",
+			"line": "349",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "381: \t} else if xmlCheck.MatchString(contentType) {\n382: \t\txml.NewEncoder(bodyBuf).Encode(body)\n383: \t}\n",
+			"line": "382",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "230: \t\theaderParams[\"Content-Length\"] = fmt.Sprintf(\"%d\", body.Len())\n231: \t\tw.Close()\n232: \t}\n",
+			"line": "231",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go",
+			"code": "208: \t\t\t\t} else { // form value\n209: \t\t\t\t\tw.WriteField(k, iv)\n210: \t\t\t\t}\n",
+			"line": "209",
+			"column": "6"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "558: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n559: \tlocalVarHttpResponse.Body.Close()\n560: \tif err != nil {\n",
+			"line": "559",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "447: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n448: \tlocalVarHttpResponse.Body.Close()\n449: \tif err != nil {\n",
+			"line": "448",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "336: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n337: \tlocalVarHttpResponse.Body.Close()\n338: \tif err != nil {\n",
+			"line": "337",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "225: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n226: \tlocalVarHttpResponse.Body.Close()\n227: \tif err != nil {\n",
+			"line": "226",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go",
+			"code": "114: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n115: \tlocalVarHttpResponse.Body.Close()\n116: \tif err != nil {\n",
+			"line": "115",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_event_controller_v1_impl.go",
+			"code": "126: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n127: \tlocalVarHttpResponse.Body.Close()\n128: \tif err != nil {\n",
+			"line": "127",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_alert_controller_v1_impl.go",
+			"code": "121: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n122: \tlocalVarHttpResponse.Body.Close()\n123: \tif err != nil {\n",
+			"line": "122",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go",
+			"code": "71: \n72: \tioutil.WriteFile(file, jtkn, 0644)\n73: \treturn true, err\n",
+			"line": "72",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "338: \tscb.StopChan \u003c- struct{}{}\n339: \tscb.posHandler.WritePostiontoFile(scb.currentPosition)\n340: \tclose(scb.done)\n",
+			"line": "339",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "335: func (scb *Sophoscentralbeat) Stop() {\n336: \tscb.client.Close()\n337: \tclose(stopCh)\n",
+			"line": "336",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "265: \n266: \tscb.posHandler.WritePostiontoFile(scb.currentPosition)\n267: \treturn nil\n",
+			"line": "266",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go",
+			"code": "182: \n183: \tscb.posHandler.WritePostiontoFile(scb.currentPosition)\n184: \treturn nil\n",
+			"line": "183",
+			"column": "2"
+		}
+	],
+	"Stats": {
+		"files": 40,
+		"lines": 2846,
+		"nosec": 0,
+		"found": 20
+	}
+}

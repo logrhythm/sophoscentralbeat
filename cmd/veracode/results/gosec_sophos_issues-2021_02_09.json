@@ -1,0 +1,180 @@
+{
+    "HIGH": {
+        "G101": {
+            "confidence": "LOW", 
+            "cwe": {
+                "URL": "https://cwe.mitre.org/data/definitions/798.html", 
+                "ID": "798"
+            }, 
+            "details": "Potential hardcoded credentials", 
+            "filelist": {
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "column": "2", 
+                        "line": "80", 
+                        "code": "79: \n80: \ttokenCacheDir := \"/beats/sophoscentralbeat\"\n81: \n"
+                    }
+                ]
+            }
+        }
+    }, 
+    "MEDIUM": {
+        "G306": {
+            "confidence": "HIGH", 
+            "cwe": {
+                "URL": "https://cwe.mitre.org/data/definitions/276.html", 
+                "ID": "276"
+            }, 
+            "details": "Expect WriteFile permissions to be 0600 or less", 
+            "filelist": {
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "column": "2", 
+                        "line": "72", 
+                        "code": "71: \n72: \tioutil.WriteFile(file, jtkn, 0644)\n73: \treturn true, err\n"
+                    }
+                ]
+            }
+        }, 
+        "G307": {
+            "confidence": "HIGH", 
+            "cwe": {
+                "URL": "https://cwe.mitre.org/data/definitions/703.html", 
+                "ID": "703"
+            }, 
+            "details": "Deferring unsafe method \"Close\" on type \"*os.File\"", 
+            "filelist": {
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go": [
+                    {
+                        "column": "2", 
+                        "line": "349", 
+                        "code": "348: \t}\n349: \tdefer file.Close()\n350: \n"
+                    }
+                ]
+            }
+        }, 
+        "G304": {
+            "confidence": "HIGH", 
+            "cwe": {
+                "URL": "https://cwe.mitre.org/data/definitions/22.html", 
+                "ID": "22"
+            }, 
+            "details": "Potential file inclusion via variable", 
+            "filelist": {
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go": [
+                    {
+                        "column": "15", 
+                        "line": "345", 
+                        "code": "344: func addFile(w *multipart.Writer, fieldName, path string) error {\n345: \tfile, err := os.Open(path)\n346: \tif err != nil {\n"
+                    }
+                ], 
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "column": "15", 
+                        "line": "43", 
+                        "code": "42: \n43: \tdata, err := ioutil.ReadFile(file)\n44: \n"
+                    }
+                ]
+            }
+        }
+    }, 
+    "LOW": {
+        "G104": {
+            "confidence": "HIGH", 
+            "cwe": {
+                "URL": "https://cwe.mitre.org/data/definitions/703.html", 
+                "ID": "703"
+            }, 
+            "details": "Errors unhandled.", 
+            "filelist": {
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/client.go": [
+                    {
+                        "column": "3", 
+                        "line": "382", 
+                        "code": "381: \t} else if xmlCheck.MatchString(contentType) {\n382: \t\txml.NewEncoder(bodyBuf).Encode(body)\n383: \t}\n"
+                    }, 
+                    {
+                        "column": "3", 
+                        "line": "231", 
+                        "code": "230: \t\theaderParams[\"Content-Length\"] = fmt.Sprintf(\"%d\", body.Len())\n231: \t\tw.Close()\n232: \t}\n"
+                    }, 
+                    {
+                        "column": "6", 
+                        "line": "209", 
+                        "code": "208: \t\t\t\t} else { // form value\n209: \t\t\t\t\tw.WriteField(k, iv)\n210: \t\t\t\t}\n"
+                    }
+                ], 
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_sec_migration_controller_v1_impl.go": [
+                    {
+                        "column": "2", 
+                        "line": "559", 
+                        "code": "558: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n559: \tlocalVarHttpResponse.Body.Close()\n560: \tif err != nil {\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "448", 
+                        "code": "447: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n448: \tlocalVarHttpResponse.Body.Close()\n449: \tif err != nil {\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "337", 
+                        "code": "336: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n337: \tlocalVarHttpResponse.Body.Close()\n338: \tif err != nil {\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "226", 
+                        "code": "225: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n226: \tlocalVarHttpResponse.Body.Close()\n227: \tif err != nil {\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "115", 
+                        "code": "114: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n115: \tlocalVarHttpResponse.Body.Close()\n116: \tif err != nil {\n"
+                    }
+                ], 
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/handlers/positionHandler.go": [
+                    {
+                        "column": "2", 
+                        "line": "72", 
+                        "code": "71: \n72: \tioutil.WriteFile(file, jtkn, 0644)\n73: \treturn true, err\n"
+                    }
+                ], 
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_event_controller_v1_impl.go": [
+                    {
+                        "column": "2", 
+                        "line": "127", 
+                        "code": "126: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n127: \tlocalVarHttpResponse.Body.Close()\n128: \tif err != nil {\n"
+                    }
+                ], 
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/beater/sophoscentralbeat.go": [
+                    {
+                        "column": "2", 
+                        "line": "339", 
+                        "code": "338: \tscb.StopChan <- struct{}{}\n339: \tscb.posHandler.WritePostiontoFile(scb.currentPosition)\n340: \tclose(scb.done)\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "336", 
+                        "code": "335: func (scb *Sophoscentralbeat) Stop() {\n336: \tscb.client.Close()\n337: \tclose(stopCh)\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "266", 
+                        "code": "265: \n266: \tscb.posHandler.WritePostiontoFile(scb.currentPosition)\n267: \treturn nil\n"
+                    }, 
+                    {
+                        "column": "2", 
+                        "line": "183", 
+                        "code": "182: \n183: \tscb.posHandler.WritePostiontoFile(scb.currentPosition)\n184: \treturn nil\n"
+                    }
+                ], 
+                "/root/veracode/src/github.com/logrhythm/sophoscentralbeat/sophoscentral/api_alert_controller_v1_impl.go": [
+                    {
+                        "column": "2", 
+                        "line": "122", 
+                        "code": "121: \tlocalVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)\n122: \tlocalVarHttpResponse.Body.Close()\n123: \tif err != nil {\n"
+                    }
+                ]
+            }
+        }
+    }
+}
