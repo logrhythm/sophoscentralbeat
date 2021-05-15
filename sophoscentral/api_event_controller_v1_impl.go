@@ -129,6 +129,10 @@ func (a *EventControllerV1ImplApiService) GetEventsUsingGET1(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
+	if localVarHttpResponse.StatusCode == 429 {
+		time.Sleep(5 * time.Second)
+		continue
+	}
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericOpenAPIError{
 			body:  localVarBody,
