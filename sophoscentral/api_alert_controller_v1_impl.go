@@ -16,6 +16,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
 
 	"github.com/antihax/optional"
 )
@@ -124,6 +125,10 @@ func (a *AlertControllerV1ImplApiService) GetAlertsUsingGET1(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
+	if localVarHttpResponse.StatusCode == 429 {
+		time.Sleep(2 * time.Second)
+		return AlertAggregate{}, nil, nil
+	}
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericOpenAPIError{
 			body:  localVarBody,

@@ -16,6 +16,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"time"
 
 	"github.com/antihax/optional"
 )
@@ -131,7 +132,7 @@ func (a *EventControllerV1ImplApiService) GetEventsUsingGET1(ctx context.Context
 
 	if localVarHttpResponse.StatusCode == 429 {
 		time.Sleep(5 * time.Second)
-		continue
+		return EventAggregate{}, nil, nil
 	}
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericOpenAPIError{
